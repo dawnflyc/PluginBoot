@@ -1,0 +1,64 @@
+server:
+  port: 8080
+
+spring:
+  servlet:
+    multipart:
+      location: ./tmp/
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      url: jdbc:mysql://localhost/plugin_boot?useSSL=false&characterEncoding=utf-8
+      username: root
+      password: 123123
+      initialSize: 5
+      minIdle: 10
+      maxActive: 20
+      maxWait: 60000
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      maxEvictableIdleTimeMillis: 900000
+      validationQuery: SELECT 1 FROM DUAL
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      webStatFilter:
+        enabled: true
+      filter:
+        stat:
+          enabled: true
+          log-slow-sql: true
+          slow-sql-millis: 1000
+          merge-sql: true
+        wall:
+          config:
+            multi-statement-allow: true
+  redis:
+    password:
+    lettuce:
+      pool:
+        max-active: 1000
+        max-idle: 10
+        min-idle: 5
+        max-wait: -1ms
+    timeout: 300s
+    host: localhost
+    port: 9713
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+mybatis:
+  configuration:
+    default-fetch-size: 100
+    default-statement-timeout: 30
+    map-underscore-to-camel-case: true
+#  mapper-locations: classpath*:**/mapper/*Mapper.xml #mapper??
+#  type-aliases-package: com.dawnflyc.junadmin.app.*.pojo
+
+logging:
+  level:
+    root: info
+    org.springframework: INFO
+    com.dawnflyc: DEBUG
+    io.lettuce.core.protocol: ERROR
+
