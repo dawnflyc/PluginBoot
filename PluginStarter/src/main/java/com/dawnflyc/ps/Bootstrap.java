@@ -12,7 +12,7 @@ import org.springframework.context.event.ContextClosedEvent;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SpringBootsrap implements ApplicationRunner, ApplicationListener<ContextClosedEvent>, ApplicationContextAware {
+public class Bootstrap implements ApplicationRunner, ApplicationListener<ContextClosedEvent>, ApplicationContextAware {
 
 
     @Override

@@ -122,6 +122,7 @@
                 <enabled>true</enabled>
             </releases>
         </repository>
+        <!--jql在自己的maven仓库里，不太稳定，但已经开源，可以自己安装-->
         <repository>
             <id>reposilite-repository-releases</id>
             <name>Reposilite Repository</name>

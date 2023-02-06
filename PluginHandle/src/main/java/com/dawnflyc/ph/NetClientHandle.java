@@ -40,4 +40,10 @@ public class NetClientHandle extends ChannelInboundHandlerAdapter {
         String str = new String(bytes);
         System.out.println(str);
     }
+
+    @Override
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+        System.out.println("服务关闭了");
+//        cause.printStackTrace();
+    }
 }

@@ -1,4 +1,4 @@
-package com.dawnflyc.ps.handle;
+package com.dawnflyc.ps;
 
 import com.dawnflyc.pm.MasterApplication;
 

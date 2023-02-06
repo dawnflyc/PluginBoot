@@ -45,10 +45,9 @@ public class NetClient {
                         }
                     });
             ChannelFuture channelFuture = b.connect("localhost", Integer.parseInt(port)).sync();
-            System.out.println(channelFuture.isSuccess());
             channelFuture.channel().closeFuture().sync();
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("链接失败");
         } finally {
             workerGroup.shutdownGracefully();
         }
